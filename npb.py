@@ -702,6 +702,61 @@ class AdvancedNetworkAnalyzer:
         self.ais_metrics_text.delete("1.0", tk.END)
         self.ais_metrics_text.insert(tk.END, metrics_text)
 
+        """"
+        bir sonuç örneği ve açıklaması:
+            K-Means Kümeleme:
+
+            Küme Sayısı: 5
+            Bu, verilerin 5 farklı gruba ayrıldığını gösterir. Her küme, benzer özelliklere sahip veri noktalarını temsil eder.
+            Atalet (Inertia): 16.34
+            Bu değer, veri noktalarının kendi kümelerinin merkezine olan uzaklıklarının karelerinin toplamıdır. 
+            Daha düşük bir değer, kümelerin daha sıkı ve iyi tanımlanmış olduğunu gösterir. 
+            16.34, kümelerin makul bir şekilde tanımlandığını, ancak mükemmel olmadığını gösterir.
+            İterasyonlar: 2
+            Algoritmanın küme merkezlerini belirlemek için kaç kez yinelendiğini gösterir. 
+            2 iterasyon, algoritmanın hızlı bir şekilde yakınsadığını gösterir.
+
+
+            İzolasyon Ormanı:
+
+            Tahminleyici Sayısı: 100
+            Ormandaki ağaç sayısıdır. 100 ağaç, anormallikleri tespit etmek için yeterli çeşitliliği sağlar.
+            Kontaminasyon: 0.1
+            Verilerin %10'unun anormal olduğu varsayılıyor. 
+            Bu, algoritmanın anormallikleri tespit etmek için kullandığı eşik değerini belirler.
+
+
+            Tek-Sınıf SVM:
+
+            Çekirdek (Kernel): rbf
+            Radyal Bazlı Fonksiyon çekirdeği kullanılıyor. 
+            Bu, verileri yüksek boyutlu bir uzaya yansıtarak karmaşık sınırlar oluşturmaya olanak tanır.
+            Nu: 0.1
+            Bu parametre, eğitim hatalarının üst sınırını ve destek vektörlerinin alt sınırını kontrol eder.
+            0.1 değeri, verilerin yaklaşık %10'unun anormal olarak sınıflandırılmasına izin verir.
+
+
+            Klonal Seçim:
+
+            Bellek Boyutu: 100
+            Sistemin hatırladığı benzersiz "antikor" sayısıdır. 
+            Bu, önceden tanımlanmış anormal davranış modellerinin sayısını temsil eder.
+
+
+            Negatif Seçim:
+
+            Detektör Sayısı: 50
+            Sistemin oluşturduğu "detektör" sayısıdır. 
+            Bu detektörler, normal davranışa uymayan trafik modellerini tespit etmek için kullanılır.
+
+
+            Özellik Ölçeklendirme (StandardScaler):
+
+            Ortalama: [11.01538462, 241.64615385, 2.49672489]
+            Her bir özellik için ortalama değerler. Bu, verilerin nasıl normalize edildiğini gösterir.
+            Varyans: [3.09382249e+01, 9.62550594e+04, 9.07240271e+00]
+            Her bir özellik için varyans değerleri. Bu, verilerin dağılımını gösterir.
+        """  
     def generate_report(self):
         try:
             self.update_status("Starting report generation process...")
