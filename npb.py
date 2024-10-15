@@ -281,7 +281,7 @@ class AdvancedNetworkAnalyzer:
         protocol_frame = ctk.CTkFrame(graphs_frame)
         protocol_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=10)
 
-        self.fig_protocol, self.ax_protocol = plt.subplots(figsize=(6, 4))
+        self.fig_protocol, self.ax_protocol = plt.subplots(figsize=(9, 4))
         self.canvas_protocol = FigureCanvasTkAgg(self.fig_protocol, master=protocol_frame)
         self.canvas_protocol.get_tk_widget().pack(fill=tk.BOTH, expand=True)
 
@@ -508,6 +508,17 @@ class AdvancedNetworkAnalyzer:
             51: "AH",
             88: "EIGRP",
             89: "OSPF",
+            112: "VRRP",  # Virtual Router Redundancy Protocol
+            132: "SCTP",  # Stream Control Transmission Protocol
+            115: "L2TP",  # Layer Two Tunneling Protocol
+            94: "IPIP",   # IP-within-IP Encapsulation Protocol
+            103: "PIM",   # Protocol Independent Multicast
+            137: "MPLS-in-IP",  # Multiprotocol Label Switching
+            41: "IPv6",   # IPv6 encapsulation
+            27: "RDP",    # Reliable Data Protocol
+            121: "SMP",   # Simple Message Protocol
+            79: "WB-EXPAK",  # Wideband Expedited Control
+            99: "private",
             # Add more as needed
         }
         return protocol_map.get(proto, "Unknown")
